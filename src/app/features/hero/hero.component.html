@@ -115,6 +115,8 @@
           [class.loaded]="imageLoaded()"
           (load)="onImageLoad()"
           loading="eager"
+          fetchpriority="high"
+          decoding="sync"
           width="400"
           height="400"
         />
