@@ -1,0 +1,36 @@
+{
+  "name": "piyush-portfolio",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "config": "node set-env.js",
+    "start": "npm run config && ng serve",
+    "build": "npm run config && ng build",
+    "watch": "npm run config && ng build --watch --configuration development",
+    "test": "npm run config && ng test"
+  },
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "dependencies": {
+    "@angular/animations": "^21.2.8",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@emailjs/browser": "^4.4.1",
+    "@omnedia/ngx-theme-toggle": "^4.0.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "^0.16.1"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.7",
+    "@angular/cli": "^21.2.7",
+    "@angular/compiler-cli": "^21.2.0",
+    "dotenv": "^17.4.2",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2"
+  }
+}
