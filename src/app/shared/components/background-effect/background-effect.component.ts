@@ -66,7 +66,7 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
     const centerX = this.canvas.width * 0.5;
     const centerY = this.canvas.height * 0.5;
 
-    // Gradient mesh background
+    // Draw soft background gradient
     const grd = this.ctx.createRadialGradient(
       centerX, centerY, 0,
       centerX, centerY, Math.max(this.canvas.width, this.canvas.height) * 0.7
@@ -81,7 +81,7 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
     this.ctx.fillStyle = grd;
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // Particles
+    // Draw moving dots
     for (const p of this.particles) {
       p.x += p.vx;
       p.y += p.vy;
@@ -97,7 +97,7 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
       this.ctx.fill();
     }
 
-    // Connect nearby particles
+    // Draw lines between close dots
     for (let i = 0; i < this.particles.length; i++) {
       for (let j = i + 1; j < this.particles.length; j++) {
         const dx = this.particles[i].x - this.particles[j].x;

@@ -15,7 +15,7 @@ export class EmailService {
   async sendEmail(form: ContactFormData): Promise<void> {
     const { serviceId, templateId, publicKey } = environment.emailJs;
 
-    // Do not fake success in production/dev; fail loudly if not configured.
+    // Stop everything and throw an error if the keys are missing.
     if (!serviceId || !templateId || !publicKey) {
       throw new Error('EmailJS is not configured');
     }

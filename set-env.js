@@ -1,19 +1,19 @@
 const fs = require('fs');
 const dotenv = require('dotenv');
 
-// Load environment variables from .env file if it exists (for local dev)
+// Grab local .env variables
 dotenv.config();
 
 const dirPath = './src/environments';
 const targetPath = `${dirPath}/environment.ts`;
 const targetProdPath = `${dirPath}/environment.prod.ts`;
 
-// Ensure the environments directory exists
+// Auto-create folder if needed
 if (!fs.existsSync(dirPath)) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
-// Function to generate content for environment files
+// Build the environment file contents
 const generateContent = (isProd) => `export const environment = {
   production: ${isProd},
   emailJs: {
@@ -34,7 +34,7 @@ const generateContent = (isProd) => `export const environment = {
 };
 `;
 
-// Write variables to environment files
+// Save the files
 try {
   fs.writeFileSync(targetPath, generateContent(false));
   console.log(`Successfully generated environment.ts`);
