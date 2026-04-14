@@ -1,0 +1,107 @@
+@use '../../../styles/mixins' as m;
+
+.skills-section { background: var(--bg-primary); }
+.section-header { text-align: center; margin-bottom: 40px; }
+
+.skills-container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.skills-category-column {
+  margin-bottom: 14px;
+}
+
+.category-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 28px;
+    height: 2px;
+    background: #6366f1;
+    border-radius: 4px;
+  }
+}
+
+.cat-emoji { font-size: 1rem; }
+
+.skills-column-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-card {
+  @include m.glass-card;
+  padding: 10px 14px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--accent) 48%, var(--glass-border));
+    box-shadow: 0 10px 24px rgba(99, 102, 241, 0.18);
+    .skill-icon-wrapper i { transform: scale(1.08); }
+  }
+}
+
+.skill-card.core-skill {
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--glass-border));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent), 0 8px 20px rgba(99, 102, 241, 0.2);
+
+  .skill-name {
+    font-weight: 700;
+  }
+}
+
+.skill-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    font-size: 1.6rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.skill-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+}
+
+.skill-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

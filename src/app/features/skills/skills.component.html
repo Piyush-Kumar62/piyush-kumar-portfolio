@@ -1,0 +1,40 @@
+<section id="skills" class="section skills-section" aria-label="Technical Skills">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">⚙️ Skills</span>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="skills-container-grid">
+      @for (category of skillCategories; track category.title; let ci = $index) {
+        <div class="skills-category-column">
+          <h3 class="category-heading" appScrollReveal [delay]="ci * 100">
+            <span class="cat-emoji">{{ category.emoji }}</span> {{ category.title }}
+          </h3>
+          
+          <div class="skills-column-grid">
+            @for (skill of category.skills; track skill.name; let si = $index) {
+              <div
+                class="skill-card glass-card"
+                [class.core-skill]="skill.core"
+                [attr.title]="skill.hint || null"
+                appScrollReveal
+                [delay]="(ci * 100) + (si * 50)"
+              >
+                <div class="skill-icon-wrapper">
+                  <i [class]="skill.iconClass"></i>
+                </div>
+                <div class="skill-info">
+                  <div class="skill-meta-header">
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

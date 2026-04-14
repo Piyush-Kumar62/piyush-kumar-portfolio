@@ -1,0 +1,43 @@
+<section id="experience" class="section experience-section" aria-label="Experience">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">💼 Experience</span>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.id; let i = $index) {
+        <div class="timeline-item" [class.even]="i % 2 !== 0" appScrollReveal [delay]="i * 120">
+          <div class="exp-card glass-card">
+            <div class="exp-header">
+              <div class="exp-title-group">
+                <h3 class="exp-role">{{ exp.role }}</h3>
+                <p class="exp-company">{{ exp.company }}</p>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-badge">{{ exp.type }}</span>
+                <span class="exp-duration">{{ exp.duration }}</span>
+                <span class="exp-location">📍 {{ exp.location }}</span>
+              </div>
+            </div>
+
+            <ul class="exp-points">
+              @for (point of exp.description; track point; let j = $index) {
+                <li>
+                  <span class="point-bullet"></span>
+                  {{ point }}
+                </li>
+              }
+            </ul>
+
+            <div class="exp-tech">
+              @for (tech of exp.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
