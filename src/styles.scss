@@ -1,0 +1,197 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+@use 'styles/animations';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// ==========================================
+// RESET & BASE
+// ==========================================
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; }
+ul, ol { list-style: none; }
+
+// Smooth focus
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 99px;
+}
+
+// Selection
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: var(--text-primary);
+}
+
+// ==========================================
+// TYPOGRAPHY UTILITIES
+// ==========================================
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  @include section-title;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  line-height: 1.7;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+// ==========================================
+// LAYOUT UTILITIES
+// ==========================================
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-padding;
+}
+
+.glass-card {
+  @include glass-card;
+}
+
+.tech-tag {
+  @include tech-tag;
+}
+
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-outline {
+  @include btn-outline;
+}
+
+// ==========================================
+// SKELETON LOADING
+// ==========================================
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    var(--bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+// ==========================================
+// PAGE TRANSITION
+// ==========================================
+
+.page-enter { animation: slideDown 0.5s ease-out; }
+
+// ==========================================
+// SECTION DIVIDER
+// ==========================================
+
+.section-divider {
+  width: 88px;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 99px;
+  margin: 6px auto 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.theme-center-reveal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  clip-path: circle(0% at 50% 50%);
+  opacity: 0.98;
+}
+
+.theme-center-reveal.active {
+  animation: themeCenterReveal 520ms ease-in-out forwards;
+}
+
+@keyframes themeCenterReveal {
+  from { clip-path: circle(0% at 50% 50%); }
+  to { clip-path: circle(150% at 50% 50%); }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+html.theme-transitioning::view-transition-new(root) {
+  clip-path: circle(0 at var(--theme-reveal-x, 50%) var(--theme-reveal-y, 50%));
+  animation: themeCenterPageReveal 620ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes themeCenterPageReveal {
+  to {
+    clip-path: circle(
+      var(--theme-reveal-end-radius, 150vmax) at
+      var(--theme-reveal-x, 50%) var(--theme-reveal-y, 50%)
+    );
+  }
+}
