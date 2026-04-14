@@ -1,0 +1,97 @@
+// ==========================================
+// DESIGN TOKENS — Piyush Kumar Portfolio
+// ==========================================
+
+// Color Palette — Dark Theme (default)
+:root,
+[data-theme="dark"] {
+  --bg-primary:       #070b14;
+  --bg-secondary:     #0d1220;
+  --bg-card:          rgba(255, 255, 255, 0.04);
+  --bg-card-hover:    rgba(255, 255, 255, 0.08);
+
+  --accent:           #6366f1;   // Indigo
+  --accent-2:         #06b6d4;   // Cyan
+  --accent-3:         #a855f7;   // Purple
+  --gradient:         linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  --gradient-text:    linear-gradient(135deg, #818cf8, #67e8f9);
+  --gradient-hover:   linear-gradient(135deg, #818cf8 0%, #38bdf8 100%);
+
+  --glass:            rgba(255, 255, 255, 0.05);
+  --glass-border:     rgba(255, 255, 255, 0.10);
+  --glass-blur:       blur(16px);
+
+  --text-primary:     #f1f5f9;
+  --text-secondary:   #94a3b8;
+  --text-muted:       #64748b;
+  --text-accent:      #818cf8;
+
+  --border:           rgba(255, 255, 255, 0.08);
+  --border-accent:    rgba(99, 102, 241, 0.4);
+
+  --shadow:           0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-accent:    0 0 40px rgba(99, 102, 241, 0.2);
+  --shadow-glow:      0 0 60px rgba(99, 102, 241, 0.15);
+
+  --navbar-bg:        rgba(7, 11, 20, 0.85);
+  --scrollbar-thumb:  #6366f1;
+
+  --success:          #22c55e;
+  --error:            #ef4444;
+  --warning:          #f59e0b;
+}
+
+// Light Theme
+[data-theme="light"] {
+  --bg-primary:       #f8faff;
+  --bg-secondary:     #eef2ff;
+  --bg-card:          rgba(255, 255, 255, 0.8);
+  --bg-card-hover:    rgba(255, 255, 255, 0.95);
+
+  --accent:           #4f46e5;
+  --accent-2:         #0891b2;
+  --accent-3:         #7c3aed;
+  --gradient:         linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+  --gradient-text:    linear-gradient(135deg, #4f46e5, #0891b2);
+  --gradient-hover:   linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+
+  --glass:            rgba(255, 255, 255, 0.7);
+  --glass-border:     rgba(99, 102, 241, 0.2);
+  --glass-blur:       blur(20px);
+
+  --text-primary:     #1e293b;
+  --text-secondary:   #475569;
+  --text-muted:       #94a3b8;
+  --text-accent:      #4f46e5;
+
+  --border:           rgba(99, 102, 241, 0.12);
+  --border-accent:    rgba(79, 70, 229, 0.4);
+
+  --shadow:           0 4px 24px rgba(99, 102, 241, 0.12);
+  --shadow-accent:    0 0 40px rgba(79, 70, 229, 0.15);
+  --shadow-glow:      0 0 60px rgba(79, 70, 229, 0.08);
+
+  --navbar-bg:        rgba(248, 250, 255, 0.9);
+  --scrollbar-thumb:  #4f46e5;
+
+  --success:          #16a34a;
+  --error:            #dc2626;
+  --warning:          #d97706;
+}
+
+// Typography
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+// Spacing
+$navbar-h:    72px;
+$border-r:    12px;
+$border-r-lg: 20px;
+$border-r-xl: 28px;
+
+// Breakpoints
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+$bp-2xl: 1536px;

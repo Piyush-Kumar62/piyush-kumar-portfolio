@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E40AF"/>
+      <stop offset="1" stop-color="#0891B2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <rect x="54" y="56" width="1172" height="82" rx="16" fill="rgba(255,255,255,0.18)"/>
+  <rect x="86" y="84" width="360" height="24" rx="10" fill="#fff" fill-opacity="0.9"/>
+  <rect x="930" y="84" width="260" height="24" rx="10" fill="#fff" fill-opacity="0.45"/>
+  <rect x="54" y="172" width="760" height="574" rx="18" fill="rgba(13,22,45,0.56)" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="92" y="220" width="360" height="26" rx="10" fill="#fff" fill-opacity="0.88"/>
+  <rect x="92" y="264" width="600" height="18" rx="8" fill="#fff" fill-opacity="0.44"/>
+  <rect x="92" y="296" width="520" height="18" rx="8" fill="#fff" fill-opacity="0.36"/>
+  <rect x="92" y="350" width="680" height="160" rx="16" fill="rgba(99,102,241,0.2)" stroke="rgba(255,255,255,0.18)"/>
+  <circle cx="186" cy="430" r="52" fill="#22D3EE" fill-opacity="0.85"/>
+  <circle cx="330" cy="430" r="52" fill="#6366F1" fill-opacity="0.85"/>
+  <circle cx="474" cy="430" r="52" fill="#10B981" fill-opacity="0.85"/>
+  <rect x="92" y="548" width="280" height="150" rx="14" fill="rgba(255,255,255,0.08)"/>
+  <rect x="386" y="548" width="386" height="150" rx="14" fill="rgba(255,255,255,0.08)"/>
+  <rect x="848" y="172" width="378" height="272" rx="18" fill="rgba(13,22,45,0.56)" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="886" y="220" width="260" height="22" rx="10" fill="#fff" fill-opacity="0.86"/>
+  <rect x="886" y="258" width="300" height="16" rx="8" fill="#fff" fill-opacity="0.4"/>
+  <rect x="886" y="288" width="220" height="16" rx="8" fill="#fff" fill-opacity="0.28"/>
+  <rect x="848" y="474" width="378" height="272" rx="18" fill="rgba(13,22,45,0.56)" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="886" y="522" width="240" height="22" rx="10" fill="#fff" fill-opacity="0.86"/>
+  <rect x="886" y="560" width="300" height="16" rx="8" fill="#fff" fill-opacity="0.4"/>
+  <rect x="886" y="590" width="250" height="16" rx="8" fill="#fff" fill-opacity="0.28"/>
+</svg>

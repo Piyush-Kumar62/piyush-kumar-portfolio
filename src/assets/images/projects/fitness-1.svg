@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" fill="none">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1280" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6D28D9"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg3)"/>
+  <rect x="58" y="58" width="1164" height="108" rx="18" fill="rgba(255,255,255,0.15)"/>
+  <rect x="96" y="96" width="340" height="24" rx="10" fill="#fff" fill-opacity="0.9"/>
+  <rect x="920" y="96" width="260" height="24" rx="10" fill="#fff" fill-opacity="0.45"/>
+  <rect x="58" y="194" width="564" height="542" rx="20" fill="rgba(14,14,42,0.55)" stroke="rgba(255,255,255,0.2)"/>
+  <rect x="94" y="232" width="220" height="20" rx="9" fill="#fff" fill-opacity="0.86"/>
+  <rect x="94" y="266" width="360" height="16" rx="8" fill="#fff" fill-opacity="0.36"/>
+  <rect x="94" y="302" width="490" height="190" rx="18" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
+  <rect x="112" y="528" width="490" height="170" rx="18" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
+  <rect x="658" y="194" width="564" height="250" rx="20" fill="rgba(14,14,42,0.55)" stroke="rgba(255,255,255,0.2)"/>
+  <rect x="696" y="232" width="220" height="20" rx="9" fill="#fff" fill-opacity="0.86"/>
+  <rect x="696" y="266" width="430" height="16" rx="8" fill="#fff" fill-opacity="0.36"/>
+  <circle cx="760" cy="356" r="46" fill="#22D3EE" fill-opacity="0.88"/>
+  <circle cx="886" cy="356" r="46" fill="#A78BFA" fill-opacity="0.88"/>
+  <circle cx="1012" cy="356" r="46" fill="#6366F1" fill-opacity="0.88"/>
+  <rect x="658" y="486" width="564" height="250" rx="20" fill="rgba(14,14,42,0.55)" stroke="rgba(255,255,255,0.2)"/>
+  <rect x="696" y="524" width="250" height="20" rx="9" fill="#fff" fill-opacity="0.86"/>
+  <rect x="696" y="558" width="460" height="16" rx="8" fill="#fff" fill-opacity="0.36"/>
+  <rect x="696" y="590" width="390" height="16" rx="8" fill="#fff" fill-opacity="0.28"/>
+</svg>

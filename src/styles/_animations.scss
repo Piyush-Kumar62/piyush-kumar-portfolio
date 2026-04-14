@@ -1,0 +1,89 @@
+// ==========================================
+// GLOBAL ANIMATIONS
+// ==========================================
+
+// Scroll reveal
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.35, 0, 0.25, 1),
+              transform 0.7s cubic-bezier(0.35, 0, 0.25, 1);
+
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Floating animation for hero image
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-12px) rotate(1deg); }
+  66%       { transform: translateY(-6px) rotate(-1deg); }
+}
+
+// Pulse glow
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+  50%       { box-shadow: 0 0 50px rgba(99, 102, 241, 0.6); }
+}
+
+// Shimmer for loading skeleton
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+// Typewriter cursor blink
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+// Gradient shift for background
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Particle orbit
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+// Spin
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// Wave
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50%       { transform: scaleY(1.5); }
+}
+
+// Ripple
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+// Slide in from top
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+// Progress bar fill
+@keyframes fillBar {
+  from { width: 0; }
+  to   { width: var(--target-width); }
+}
+
+// Utility classes
+.animate-float       { animation: float 5s ease-in-out infinite; }
+.animate-pulse-glow  { animation: pulseGlow 3s ease-in-out infinite; }
+.animate-spin        { animation: spin 1s linear infinite; }
+.animate-slide-down  { animation: slideDown 0.4s ease-out; }
