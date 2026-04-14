@@ -1,0 +1,27 @@
+<section id="education" class="section education-section" aria-label="Education">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">🎓 Education</span>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="education-single" appScrollReveal [delay]="100">
+      <article class="edu-card glass-card">
+        <div class="edu-grid">
+          <div class="edu-col edu-col-left">
+            <h3 class="edu-title">{{ btech.college }}</h3>
+            <p class="edu-line"><strong>Degree:</strong> {{ btech.degree }}</p>
+            <p class="edu-line"><strong>Branch:</strong> {{ btech.branch }}</p>
+            <p class="edu-line"><strong>Specialization:</strong> {{ btech.specialization }}</p>
+          </div>
+
+          <div class="edu-col edu-col-right">
+            <p class="edu-line"><strong>Location:</strong> {{ btech.location }}</p>
+            <p class="edu-line"><strong>Duration:</strong> {{ btech.duration }}</p>
+            <p class="edu-line"><strong>CGPA:</strong> {{ btech.cgpa }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

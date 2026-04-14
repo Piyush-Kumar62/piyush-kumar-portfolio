@@ -1,0 +1,38 @@
+<section id="certifications" class="section certs-section" aria-label="Certifications">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">🏅 Certifications</span>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="certs-grid">
+      @for (cert of certificates; track cert.id; let i = $index) {
+        <div class="cert-card" appScrollReveal [delay]="i * 120">
+          <div class="cert-preview">
+            @if (cert.image) {
+              <img
+                class="cert-image"
+                [src]="cert.image"
+                [alt]="cert.title + ' certificate'"
+                loading="lazy"
+              />
+            } @else {
+              <div class="cert-placeholder">Upload Java Certificate</div>
+            }
+          </div>
+
+          <div class="cert-footer">
+            <h3 class="cert-title">{{ cert.title }}</h3>
+            @if (cert.link) {
+              <a class="cert-link" [href]="cert.link" target="_blank" rel="noopener noreferrer">
+                {{ cert.linkLabel }}
+              </a>
+            } @else {
+              <span class="cert-link cert-link--disabled">{{ cert.linkLabel }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

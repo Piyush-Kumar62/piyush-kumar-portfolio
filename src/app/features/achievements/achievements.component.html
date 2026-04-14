@@ -1,0 +1,53 @@
+<section id="achievements" class="achievements-section" aria-label="Key Achievements">
+  <div class="container section-container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">🏆 Achievements</span>
+      <div class="section-divider"></div>
+    </div>
+
+    <article class="featured-achievement" appScrollReveal [delay]="150" aria-label="Featured Open Source Achievement">
+      <div class="featured-layout">
+        <div class="featured-content">
+          <div class="featured-top">
+            <span class="featured-icon">{{ openSourceAchievement.icon }}</span>
+            <h3 class="featured-title">{{ openSourceAchievement.title }}</h3>
+          </div>
+
+          <ul class="featured-points">
+            @for (point of openSourceAchievement.points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+
+          <div class="featured-links">
+            @for (link of openSourceAchievement.links; track link.label) {
+              <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="featured-link">
+                <span class="featured-link-icon">{{ link.icon }}</span>
+                <span class="featured-link-text">{{ link.label }}</span>
+              </a>
+            }
+          </div>
+        </div>
+
+        <div class="featured-media" aria-label="Hacktoberfest Images">
+          <div class="featured-slides">
+            <div class="featured-track" [style.transform]="'translateX(-' + (currentImageIndex() * 100) + '%)'">
+              @for (image of hacktoberfestImages; track image.src) {
+                <div class="featured-slide">
+                  <img class="featured-image" [src]="image.src" [alt]="image.alt" loading="lazy" />
+                </div>
+              }
+            </div>
+          </div>
+
+          <div class="slide-dots" aria-hidden="true">
+            @for (image of hacktoberfestImages; track image.src; let i = $index) {
+              <span class="dot" [class.active]="currentImageIndex() === i"></span>
+            }
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
