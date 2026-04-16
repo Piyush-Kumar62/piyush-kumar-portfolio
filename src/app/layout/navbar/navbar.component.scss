@@ -27,7 +27,7 @@
   gap: 16px;
 }
 
-// Logo
+// Logo button
 .nav-logo {
   grid-column: 1;
   justify-self: start;
@@ -39,6 +39,16 @@
   padding: 0;
   flex-shrink: 0;
   white-space: nowrap;
+}
+
+// Logo image — replaces inline style for CSP compliance
+.logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+
+  &:hover { opacity: 0.85; }
 }
 
 // Desktop nav links

@@ -6,6 +6,11 @@ export class ScrollService {
 
   private observer!: IntersectionObserver;
 
+  // Detect if user prefers reduced motion for scroll behavior
+  private get prefersReducedMotion(): boolean {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
   initSectionObserver(sectionIds: string[]): void {
     if (this.observer) this.observer.disconnect();
 
@@ -17,7 +22,7 @@ export class ScrollService {
           }
         }
       },
-      { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' }
+      { threshold: 0.2, rootMargin: '-72px 0px -20% 0px' }
     );
 
     sectionIds.forEach(id => {
@@ -29,12 +34,16 @@ export class ScrollService {
   scrollTo(sectionId: string): void {
     const el = document.getElementById(sectionId);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Use instant scroll when user prefers reduced motion
+      el.scrollIntoView({
+        behavior: this.prefersReducedMotion ? 'instant' : 'smooth',
+        block: 'start'
+      });
     }
   }
 
   scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: this.prefersReducedMotion ? 'instant' : 'smooth' });
   }
 
   destroy(): void {
