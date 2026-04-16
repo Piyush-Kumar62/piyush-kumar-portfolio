@@ -2,7 +2,7 @@
 // GLOBAL ANIMATIONS
 // ==========================================
 
-// Scroll reveal
+// Scroll reveal — base state (hidden)
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -13,7 +13,58 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  // Slide in from left
+  &.reveal-left {
+    transform: translateX(-40px);
+    &.revealed { transform: translateX(0); }
+  }
+
+  // Slide in from right
+  &.reveal-right {
+    transform: translateX(40px);
+    &.revealed { transform: translateX(0); }
+  }
+
+  // Scale up reveal
+  &.reveal-scale {
+    transform: scale(0.92);
+    &.revealed { transform: scale(1); }
+  }
 }
+
+// Disable all non-essential animations for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.reveal-left,
+  .scroll-reveal.reveal-right,
+  .scroll-reveal.reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    &.revealed { transform: none; }
+  }
+
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-spin,
+  .animate-slide-down {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ==========================================
+// KEYFRAMES
+// ==========================================
 
 // Floating animation for hero image
 @keyframes float {
@@ -22,13 +73,13 @@
   66%       { transform: translateY(-6px) rotate(-1deg); }
 }
 
-// Pulse glow
+// Pulsing glow
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
   50%       { box-shadow: 0 0 50px rgba(99, 102, 241, 0.6); }
 }
 
-// Shimmer for loading skeleton
+// Skeleton shimmer
 @keyframes shimmer {
   0%   { background-position: -200% 0; }
   100% { background-position:  200% 0; }
@@ -40,31 +91,31 @@
   50%       { opacity: 0; }
 }
 
-// Gradient shift for background
+// Gradient background shift
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-// Particle orbit
+// Particle orbit path
 @keyframes orbit {
   from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
   to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
 }
 
-// Spin
+// Simple rotation
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-// Wave
+// Wave effect (bars)
 @keyframes wave {
   0%, 100% { transform: scaleY(1); }
   50%       { transform: scaleY(1.5); }
 }
 
-// Ripple
+// Ripple expand
 @keyframes ripple {
   0%   { transform: scale(1); opacity: 0.6; }
   100% { transform: scale(2.5); opacity: 0; }
@@ -76,13 +127,28 @@
   to   { transform: translateY(0); opacity: 1; }
 }
 
-// Progress bar fill
+// Progress bar fill (uses CSS custom property)
 @keyframes fillBar {
   from { width: 0; }
   to   { width: var(--target-width); }
 }
 
-// Utility classes
+// Availability pulse ring
+@keyframes availablePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+// Scroll wheel indicator
+@keyframes scrollWheel {
+  0%   { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+// ==========================================
+// ANIMATION UTILITY CLASSES
+// ==========================================
 .animate-float       { animation: float 5s ease-in-out infinite; }
 .animate-pulse-glow  { animation: pulseGlow 3s ease-in-out infinite; }
 .animate-spin        { animation: spin 1s linear infinite; }

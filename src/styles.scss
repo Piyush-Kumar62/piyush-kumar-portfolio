@@ -15,6 +15,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -31,10 +32,10 @@ img { max-width: 100%; display: block; }
 button { font-family: inherit; }
 ul, ol { list-style: none; }
 
-// Smooth focus
+// Strong focus ring for keyboard users
 :focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline-offset: 4px;
   border-radius: 4px;
 }
 
@@ -46,10 +47,40 @@ ul, ol { list-style: none; }
   border-radius: 99px;
 }
 
-// Selection
+// Text selection highlight
 ::selection {
   background: rgba(99, 102, 241, 0.3);
   color: var(--text-primary);
+}
+
+// ==========================================
+// SKIP TO MAIN CONTENT (Accessibility)
+// ==========================================
+
+.skip-link {
+  @include visually-hidden;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 0 0 8px 0;
+  z-index: $z-overlay;
+  text-decoration: none;
+  top: 0;
+  left: 0;
+
+  // Reveal on keyboard focus
+  &:focus-visible {
+    position: fixed;
+    width: auto;
+    height: auto;
+    padding: 12px 24px;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+    overflow: visible;
+    margin: 0;
+  }
 }
 
 // ==========================================
@@ -70,7 +101,7 @@ ul, ol { list-style: none; }
 .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   max-width: 600px;
   margin: 0 auto 60px;
   line-height: 1.7;
@@ -84,8 +115,8 @@ ul, ol { list-style: none; }
   background: rgba(99, 102, 241, 0.1);
   border: 1px solid rgba(99, 102, 241, 0.3);
   border-radius: 50px;
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
-  font-weight: 700;
+  font-size: clamp(0.78rem, 1.4vw, 0.92rem);
+  font-weight: 600;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -156,13 +187,17 @@ ul, ol { list-style: none; }
 
 .section-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 4vw, 48px);
 }
+
+// ==========================================
+// THEME TRANSITION (View Transitions API)
+// ==========================================
 
 .theme-center-reveal {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: $z-overlay;
   pointer-events: none;
   clip-path: circle(0% at 50% 50%);
   opacity: 0.98;
@@ -174,7 +209,7 @@ ul, ol { list-style: none; }
 
 @keyframes themeCenterReveal {
   from { clip-path: circle(0% at 50% 50%); }
-  to { clip-path: circle(150% at 50% 50%); }
+  to   { clip-path: circle(150% at 50% 50%); }
 }
 
 ::view-transition-old(root),

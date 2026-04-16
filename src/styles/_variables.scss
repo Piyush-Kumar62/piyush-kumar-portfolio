@@ -79,19 +79,54 @@
   --warning:          #d97706;
 }
 
-// Typography
+// ==========================================
+// TYPOGRAPHY
+// ==========================================
 $font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
-// Spacing
-$navbar-h:    72px;
+// ==========================================
+// SPACING SCALE (8px base system)
+// ==========================================
+$space-1:  4px;
+$space-2:  8px;
+$space-3:  12px;
+$space-4:  16px;
+$space-5:  24px;
+$space-6:  32px;
+$space-7:  48px;
+$space-8:  64px;
+$space-9:  80px;
+$space-10: 96px;
+
+// ==========================================
+// Z-INDEX SCALE
+// ==========================================
+$z-base:    1;
+$z-card:    10;
+$z-navbar:  1000;
+$z-modal:   2000;
+$z-toast:   3000;
+$z-overlay: 9999;
+
+// ==========================================
+// SHAPE
+// ==========================================
 $border-r:    12px;
 $border-r-lg: 20px;
 $border-r-xl: 28px;
+$navbar-h:    72px;
 
-// Breakpoints
-$bp-sm:  480px;
-$bp-md:  768px;
-$bp-lg:  1024px;
-$bp-xl:  1280px;
-$bp-2xl: 1536px;
+// ==========================================
+// BREAKPOINTS (mobile-first)
+// xs  < 480px   (small phones)
+// sm  480–768px (phones & large phones)
+// md  768–1024px (tablets)
+// lg  1024–1440px (laptops)
+// xl  > 1440px  (desktops & ultra-wide)
+// ==========================================
+$bp-xs:  480px;
+$bp-sm:  768px;
+$bp-md:  1024px;
+$bp-lg:  1440px;
+$bp-xl:  1920px;
