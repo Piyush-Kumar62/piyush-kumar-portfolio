@@ -1,45 +1,68 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
   <head>
-    <meta charset="utf-8" />
-    <title>Piyush Kumar</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio of Piyush Kumar — Full Stack Java Developer specializing in Java, Spring Boot, Angular, MySQL, and AWS. Built 50+ REST APIs, real-time systems, and reduced API latency by 30-40%." />
-    <meta name="keywords" content="Piyush Kumar, Full Stack Developer, Java, Spring Boot, Angular, MySQL, AWS, REST API, WebSocket, Backend Developer, Portfolio" />
-    <meta name="author" content="Piyush Kumar" />
-    <meta name="robots" content="index, follow" />
+    <meta charset="utf-8"/>
+    <title>Piyush Kumar | Java Full Stack Developer</title>
+    <base href="/"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Portfolio of Piyush Kumar — Java Full Stack Developer specializing in Java, Spring Boot, Angular, MySQL, and AWS. Built 50+ REST APIs, real-time systems, and reduced API latency by 30-40%."/>
+    <meta name="keywords" content="Piyush Kumar, Full Stack Developer, Java, Spring Boot, Angular, MySQL, AWS, REST API, WebSocket, Backend Developer, Portfolio"/>
+    <meta name="author" content="Piyush Kumar"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="format-detection" content="telephone=no"/>
+
+    <!-- Security: CSP -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://cdn.emailjs.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
+      font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+      img-src 'self' data: https:;
+      connect-src 'self' https://api.emailjs.com https://api.countapi.xyz;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self';
+    "/>
+    <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"/>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://piyush-kumar.dev"/>
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Piyush Kumar" />
-    <meta property="og:description" content="Backend-focused engineer. 50+ REST APIs. 30-40% latency reduction. Java, Spring Boot, Angular, AWS." />
-    <meta property="og:image" content="/assets/images/piyush.png" />
-    <meta property="og:url" content="https://piyush-kumar.dev" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Piyush Kumar | Java Full Stack Developer"/>
+    <meta property="og:description" content="Backend-focused engineer. 50+ REST APIs. 30-40% latency reduction. Java, Spring Boot, Angular, AWS."/>
+    <meta property="og:image" content="https://piyush-kumar.dev/assets/images/piyush.png"/>
+    <meta property="og:url" content="https://piyush-kumar.dev"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="Piyush Kumar Portfolio"/>
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Piyush Kumar" />
-    <meta name="twitter:description" content="Backend-focused engineer. 50+ REST APIs. 30-40% latency reduction." />
-    <meta name="twitter:image" content="/assets/images/piyush.png" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@PIYUSH_KUMAR6"/>
+    <meta name="twitter:title" content="Piyush Kumar | Java Full Stack Developer"/>
+    <meta name="twitter:description" content="Backend-focused engineer. 50+ REST APIs. 30-40% latency reduction."/>
+    <meta name="twitter:image" content="https://piyush-kumar.dev/assets/images/piyush.png"/>
 
     <!-- Theme color -->
-    <meta name="theme-color" content="#6366f1" />
+    <meta name="theme-color" content="#6366f1"/>
 
     <!-- Preconnect for Google Fonts performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 
     <!-- Preload Critical Images for lightning-fast LCP -->
-    <link rel="preload" as="image" href="/assets/images/piyush.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/images/logo.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/images/piyush.png" fetchpriority="high"/>
+    <link rel="preload" as="image" href="/assets/images/logo.png" fetchpriority="high"/>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="/assets/images/logo.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="apple-touch-icon" href="/assets/images/logo.png"/>
 
     <!-- Devicon for Tech Icons -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -49,9 +72,9 @@
       "name": "Piyush Kumar",
       "url": "https://piyush-kumar.dev",
       "email": "piyushkumar30066@gmail.com",
-      "telephone": "+916202079747",
-      "jobTitle": "Full Stack Java Developer",
+      "jobTitle": "Java Full Stack Developer",
       "description": "Backend engineer specializing in Java, Spring Boot, Angular, MySQL, and AWS. Built 50+ REST APIs and reduced latency by 30-40%.",
+      "image": "https://piyush-kumar.dev/assets/images/piyush.png",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Centurion University of Technology and Management"
@@ -68,8 +91,10 @@
       ]
     }
     </script>
-  </head>
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
   <body>
     <app-root></app-root>
-  </body>
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
 </html>

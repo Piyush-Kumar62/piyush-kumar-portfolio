@@ -1,6 +1,6 @@
 # Piyush Kumar | Personal Portfolio
 
-A modern, responsive personal portfolio website built with **Angular 21**. Showcasing my projects, skills, and professional experience as a Full Stack Java Developer.
+A modern, responsive personal portfolio website built with **Angular 21**. Showcasing my projects, skills, and professional experience as a Java Full Stack Developer.
 
 Live Site: [piyush-kumar.dev](https://piyush-kumar.dev) *(Configure your domain in Vercel)*
 
