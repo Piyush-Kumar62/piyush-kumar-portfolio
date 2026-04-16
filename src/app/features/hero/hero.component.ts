@@ -6,7 +6,7 @@ import { fadeSlideIn, slideInRight } from '../../animations/fade.animation';
 import { ProfileViewsService } from '../../core/services/profile-views.service';
 
 const ROLES = [
-  'Full Stack Java Developer | Backend-Focused Engineer',
+  'Java Full Stack Developer | Backend-Focused Engineer',
 ];
 
 @Component({

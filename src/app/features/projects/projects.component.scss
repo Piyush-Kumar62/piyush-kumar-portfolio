@@ -53,14 +53,19 @@
   flex-direction: column;
   gap: 14px;
   min-width: 0;
+  container-type: inline-size;
 }
 
 .project-name {
-  font-size: clamp(1.35rem, 1.85vw, 1.62rem);
+  /* Scales perfectly to fit inside the parent container. Mathematically cannot exceed width. */
+  font-size: clamp(10px, 4.3cqi, 1.55rem);
   font-weight: 650;
   color: var(--text-primary);
   line-height: 1.15;
   margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Last resort safety net */
 }
 
 .project-tech-inline {
@@ -78,10 +83,11 @@
   align-items: center;
   padding: 6px 12px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, rgba(255, 255, 255, 0.15));
-  color: color-mix(in srgb, var(--text-primary) 92%, var(--accent));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--accent) 26%, rgba(20, 25, 45, 0.4));
+  border: 1px solid color-mix(in srgb, var(--accent) 65%, rgba(255, 255, 255, 0.25));
+  color: color-mix(in srgb, var(--text-primary) 98%, var(--accent));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0,0,0,0.15);
+  font-weight: 550;
 }
 
 .project-summary {
@@ -156,13 +162,12 @@
 .project-slides {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
   height: auto;
   margin: 0;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(5, 10, 24, 0.35);
+  background: transparent;
 }
 
 .project-track {
@@ -185,13 +190,14 @@
 .project-image {
   position: static;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
-  object-position: center;
+  display: block;
 }
 
 .project-image-svg {
   object-fit: contain;
+  object-position: center;
 }
 
 .slide-dots {
@@ -231,10 +237,10 @@
   }
 
   .tech-inline-item {
-    background: color-mix(in srgb, var(--accent) 10%, #ffffff);
-    border-color: rgba(79, 70, 229, 0.34);
-    color: #1e293b;
-    box-shadow: inset 0 0 0 1px rgba(79, 70, 229, 0.06);
+    background: color-mix(in srgb, var(--accent) 18%, #f8fafc);
+    border-color: rgba(79, 70, 229, 0.45);
+    color: #0f172a;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(79, 70, 229, 0.08);
   }
 
   .project-summary {
@@ -278,7 +284,6 @@
 @include m.respond-to(md) {
   .project-card { padding: 12px; border-radius: 20px; }
   .project-content { padding: 4px 0; }
-  .project-name { font-size: 1.12rem; }
   .project-summary { font-size: 0.86rem; }
   .project-tech-inline { font-size: 0.76rem; gap: 6px 10px; }
   .project-actions { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; padding: 2px 0 6px; }
