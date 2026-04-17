@@ -284,14 +284,14 @@
 
   &.outer-ring {
     width: 430px; height: 430px;
-    border-color: rgba(99, 102, 241, 0.2) transparent transparent;
+    border-color: rgba(99, 102, 241, 0.1) transparent transparent;
 
     @include m.respond-to(sm) { width: 340px; height: 340px; }
   }
 
   &.mid-ring {
     width: 345px; height: 345px;
-    border-color: transparent rgba(6, 182, 212, 0.2) transparent;
+    border-color: transparent rgba(6, 182, 212, 0.1) transparent;
     animation-direction: reverse;
     animation-duration: 15s;
 
@@ -309,7 +309,7 @@
   justify-content: center;
   border: 3px solid transparent;
   background: var(--gradient) border-box;
-  box-shadow: 0 0 60px rgba(99, 102, 241, 0.2), 0 0 0 6px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.1), 0 0 0 4px rgba(99, 102, 241, 0.05);
   animation: float 6s ease-in-out infinite;
   padding: 6px;
 

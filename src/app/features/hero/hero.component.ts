@@ -3,10 +3,9 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { fadeSlideIn, slideInRight } from '../../animations/fade.animation';
-import { ProfileViewsService } from '../../core/services/profile-views.service';
 
 const ROLES = [
-  'Java Full Stack Developer | Backend-Focused Engineer',
+  'Java Full Stack Developer (Backend-Focused)',
 ];
 
 @Component({
@@ -19,20 +18,11 @@ const ROLES = [
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  private readonly profileViewsService = inject(ProfileViewsService);
-
   readonly displayText  = signal('');
   readonly currentRole  = signal(0);
   readonly showCursor   = signal(true);
   readonly imageLoaded  = signal(false);
   readonly showScrollIndicator = signal(true);
-  readonly profileViews = this.profileViewsService.views;
-
-  readonly stats = [
-    { value: '50+',    label: 'REST APIs' },
-    { value: '30–40%', label: 'Faster APIs' },
-    { value: '90%',    label: 'Reduced Unauthorized Access' },
-  ];
 
   private roleIdx   = 0;
   private charIdx   = 0;
@@ -44,7 +34,6 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.type();
     this.onWindowScroll();
     this.cursorId = setInterval(() => this.showCursor.update(v => !v), 530);
-    void this.profileViewsService.init();
   }
 
   @HostListener('window:scroll')
@@ -82,7 +71,6 @@ export class HeroComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     clearTimeout(this.timerId);
     clearInterval(this.cursorId);
-    this.profileViewsService.stop();
   }
 
   scrollToProjects(): void {
