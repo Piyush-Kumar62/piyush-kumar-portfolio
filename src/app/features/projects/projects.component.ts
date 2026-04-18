@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       name: 'Digital Café Ordering & Operations Platform',
       description: 'Built a multi-role café management system with real-time order tracking, payment integration, and RBAC across 5 user workflows.',
       longDescription: 'Engineered a scalable multi-role system with role-based access control (RBAC) across 5 user workflows. Features real-time WebSocket order tracking, Razorpay payment gateway integration, and a normalized database schema reducing redundancy by 35%.',
-      summary: 'Built a multi-role cafe management system with RBAC (Admin, Owner, Chef, Waiter, Customer).\nDeveloped real-time order workflow using WebSocket (booking -> serving lifecycle).\nIntegrated Razorpay payment gateway for secure transactions.\nDesigned scalable normalized database schema.\nImproved API performance by 30-40% via SQL optimization.',
+      summary: '• Designed a multi-role system (Admin, Owner, Chef, Waiter, Customer) using RBAC\n• Built real-time order processing using WebSocket (booking → serving lifecycle)\n• Integrated Razorpay payment gateway for secure transactions\n• Designed normalized MySQL schema for scalability\n• Optimized SQL queries improving API response time',
       screens: [
         { title: 'Landing Page', src: '/assets/images/projects/digitalcafe/landing-page-header.png', alt: 'Digital Cafe landing page' },
         { title: 'Login', src: '/assets/images/projects/digitalcafe/login.png', alt: 'Digital Cafe login page' },
