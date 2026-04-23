@@ -1,8 +1,19 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": "dist/piyush-portfolio/browser",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
