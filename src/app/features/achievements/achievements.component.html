@@ -13,11 +13,11 @@
             <h3 class="featured-title">{{ openSourceAchievement.title }}</h3>
           </div>
 
-          <ul class="featured-points">
+          <div class="achievement-summary">
             @for (point of openSourceAchievement.points; track point) {
-              <li>{{ point }}</li>
+              • {{ point }}<br>
             }
-          </ul>
+          </div>
 
           <div class="featured-links">
             @for (link of openSourceAchievement.links; track link.label) {

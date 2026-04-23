@@ -17,10 +17,10 @@ export class AchievementsComponent implements OnInit, OnDestroy {
     icon: '🏆',
     title: 'Hacktoberfest 2025 — Open Source Contributor',
     points: [
-      'Completed Hacktoberfest with 6+ merged pull requests across multiple repositories.',
-      'Contributed to code improvements, bug fixes, and documentation.',
-      'Worked with Git & GitHub workflows (fork -> branch -> PR -> review -> merge).',
-      'Collaborated with maintainers following open-source standards.',
+      'Contributed multiple merged pull requests across open-source repositories focusing on bug fixes and improvements',
+      'Resolved issues by modifying existing codebases and improving functionality',
+      'Followed standard Git workflow (fork → branch → PR → review → merge)',
+      'Collaborated with maintainers by addressing feedback and improving code quality',
     ],
     links: [
       { icon: '🔗', label: 'View GitHub', url: 'https://github.com/Piyush-Kumar62' },

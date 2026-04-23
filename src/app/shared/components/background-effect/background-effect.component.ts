@@ -28,7 +28,16 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
   private particles: Particle[] = [];
   private ctx!: CanvasRenderingContext2D;
   private canvas!: HTMLCanvasElement;
+  private mouse = { x: -1000, y: -1000, radius: 150 };
   private readonly onResize = () => this.resize();
+  private readonly onMouseMove = (e: MouseEvent) => {
+    this.mouse.x = e.clientX;
+    this.mouse.y = e.clientY;
+  };
+  private readonly onMouseLeave = () => {
+    this.mouse.x = -1000;
+    this.mouse.y = -1000;
+  };
 
   ngOnInit(): void {
     this.canvas = this.canvasRef.nativeElement;
@@ -37,6 +46,8 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
     this.initParticles();
     this.animate();
     window.addEventListener('resize', this.onResize);
+    window.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener('mouseleave', this.onMouseLeave);
   }
 
   private resize(): void {
@@ -46,15 +57,17 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
 
   private initParticles(): void {
     this.particles = [];
-    const count = Math.min(60, Math.floor(window.innerWidth / 20));
+    const count = Math.min(100, Math.floor(window.innerWidth * window.innerHeight / 10000));
     for (let i = 0; i < count; i++) {
       this.particles.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        r: Math.random() * 1.5 + 0.5,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        alpha: Math.random() * 0.4 + 0.1,
+        baseX: Math.random() * window.innerWidth,
+        baseY: Math.random() * window.innerHeight,
+        r: Math.random() * 2 + 0.5,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        alpha: Math.random() * 0.5 + 0.1,
       });
     }
   }
@@ -81,7 +94,7 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
     this.ctx.fillStyle = grd;
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // Draw moving dots
+    // Draw moving dots and react to mouse
     for (const p of this.particles) {
       p.x += p.vx;
       p.y += p.vy;
@@ -89,6 +102,21 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
       if (p.x > this.canvas.width) p.x = 0;
       if (p.y < 0) p.y = this.canvas.height;
       if (p.y > this.canvas.height) p.y = 0;
+
+      // Mouse interactivity (parallax repulsion/attraction)
+      const dxMouse = this.mouse.x - p.x;
+      const dyMouse = this.mouse.y - p.y;
+      const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+      
+      if (distanceMouse < this.mouse.radius) {
+        const forceDirectionX = dxMouse / distanceMouse;
+        const forceDirectionY = dyMouse / distanceMouse;
+        const force = (this.mouse.radius - distanceMouse) / this.mouse.radius;
+        const directionX = forceDirectionX * force * 1.5;
+        const directionY = forceDirectionY * force * 1.5;
+        p.x -= directionX;
+        p.y -= directionY;
+      }
 
       this.ctx.beginPath();
       this.ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -103,13 +131,13 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
         const dx = this.particles[i].x - this.particles[j].x;
         const dy = this.particles[i].y - this.particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
+        if (dist < 140) {
           this.ctx.beginPath();
           this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
           this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-          const alpha = (1 - dist / 120) * 0.15;
+          const alpha = (1 - dist / 140) * 0.2;
           this.ctx.strokeStyle = isDark ? `rgba(99,102,241,${alpha})` : `rgba(79,70,229,${alpha * 0.5})`;
-          this.ctx.lineWidth = 0.5;
+          this.ctx.lineWidth = 0.8;
           this.ctx.stroke();
         }
       }
@@ -121,10 +149,13 @@ export class BackgroundEffectComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     cancelAnimationFrame(this.animId);
     window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener('mouseleave', this.onMouseLeave);
   }
 }
 
 interface Particle {
   x: number; y: number; r: number;
+  baseX: number; baseY: number;
   vx: number; vy: number; alpha: number;
 }

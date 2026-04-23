@@ -46,19 +46,17 @@
 
 .skill-card {
   @include m.glass-card;
+  @include m.hover-lift-3d;
   padding: 10px 14px;
   display: grid;
   grid-template-columns: 32px 1fr;
   align-items: center;
   gap: 10px;
   border-radius: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
   &:hover {
-    transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--accent) 48%, var(--glass-border));
-    box-shadow: 0 10px 24px rgba(99, 102, 241, 0.18);
-    .skill-icon-wrapper i { transform: scale(1.08); }
+    .skill-icon-wrapper i { transform: scale(1.08) rotate(-5deg); }
   }
 }
 

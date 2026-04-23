@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   longDescription: string;
   summary?: string;
+  previewTitle?: string;
   screens?: { title: string; src: string; alt: string }[];
   techStack: string[];
   githubUrl: string;

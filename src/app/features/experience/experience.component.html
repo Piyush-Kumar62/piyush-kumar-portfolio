@@ -21,14 +21,11 @@
               </div>
             </div>
 
-            <ul class="exp-points">
+            <div class="exp-summary">
               @for (point of exp.description; track point; let j = $index) {
-                <li>
-                  <span class="point-bullet"></span>
-                  {{ point }}
-                </li>
+                • {{ point }}<br>
               }
-            </ul>
+            </div>
 
             <div class="exp-tech">
               @for (tech of exp.technologies; track tech) {

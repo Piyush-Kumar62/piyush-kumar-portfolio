@@ -83,32 +83,15 @@
   text-overflow: ellipsis;
 }
 
-.featured-points {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.achievement-summary {
+  margin: 0 0 24px 0;
+  font-size: 0.9rem;
   color: var(--text-secondary);
-  display: grid;
-  gap: 0.55rem;
-
-  li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.7rem;
-    font-size: 1.03rem;
-    line-height: 1.55;
-
-    &::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-top: 0.62em;
-      flex-shrink: 0;
-      background: linear-gradient(135deg, #6366f1, #22d3ee);
-      box-shadow: 0 0 10px rgba(99, 102, 241, 0.45);
-    }
-  }
+  line-height: 1.58;
+  background: rgba(16, 35, 75, 0.58);
+  border: 1px solid rgba(88, 122, 190, 0.2);
+  border-radius: 10px;
+  padding: 14px 12px;
 }
 
 .featured-links {
@@ -230,8 +213,8 @@
     font-size: 1.3rem;
   }
 
-  .featured-points li {
-    font-size: 0.96rem;
+  .achievement-summary {
+    font-size: 0.86rem;
   }
 }
 
@@ -245,6 +228,12 @@
   .featured-achievement:hover {
     border-color: rgba(79, 70, 229, 0.38);
     box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+  }
+
+  .achievement-summary {
+    color: #334155;
+    background: rgba(79, 70, 229, 0.08);
+    border-color: rgba(79, 70, 229, 0.22);
   }
 
   .featured-slides {

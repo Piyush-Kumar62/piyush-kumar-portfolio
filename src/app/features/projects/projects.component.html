@@ -81,6 +81,7 @@
 
             <div class="project-media" [style.--project-gradient]="project.gradient">
               @if (project.screens?.length) {
+                <h4 class="media-section-title">{{ project.previewTitle || 'User Interface Preview' }}</h4>
                 <div class="project-screen-head" [attr.data-slide]="getCurrentImageIndex(project.id)">
                   {{ getCurrentScreen(project)?.title }}
                 </div>
